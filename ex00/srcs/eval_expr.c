@@ -169,8 +169,8 @@ long int	calculate(long int *nb, char *new, int k)
 		if (new[i] == '-')
 			nb[i] = -1 * nb[i];
 	k = 0;
-	i = 0;
-	while (new[i])
+	i = -1;
+	while (new[++i])
 	{
 		while (new[i] && (new[i] == '*' || new[i] == '/' || new[i] == '%'))
 		{
@@ -182,9 +182,7 @@ long int	calculate(long int *nb, char *new, int k)
 				nb2[k - 1] = nb2[k - 1] % nb[i];
 			i++;
 		}
-		nb2[k] = nb[i];
-		k++;
-		i++;
+		nb2[k++] = nb[i];
 	}
 	return (calculate2(nb2, k));
 }

@@ -1,6 +1,6 @@
 #include "eval_expr.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, char *src)
 {
 	unsigned int	i;
 
